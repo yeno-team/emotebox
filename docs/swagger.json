@@ -1,0 +1,50 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Emotebox's Server",
+        "title": "Emotebox API",
+        "contact": {},
+        "license": {
+            "name": "MIT",
+            "url": "https://github.com/yeno-team/emotebox/blob/main/LICENSE"
+        },
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/v1/status": {
+            "get": {
+                "description": "get status of app",
+                "tags": [
+                    "status"
+                ],
+                "summary": "Gives the default status of the app",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/emotebox.Status"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "emotebox.Status": {
+            "description": "Default Status Object for presentation",
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "example": 200
+                },
+                "message": {
+                    "type": "string",
+                    "maxLength": 20,
+                    "minLength": 4,
+                    "example": "OK"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+definitions:
+  emotebox.Status:
+    description: Default Status Object for presentation
+    properties:
+      code:
+        example: 200
+        type: integer
+      message:
+        example: OK
+        maxLength: 20
+        minLength: 4
+        type: string
+    type: object
+info:
+  contact: {}
+  description: Emotebox's Server
+  license:
+    name: MIT
+    url: https://github.com/yeno-team/emotebox/blob/main/LICENSE
+  title: Emotebox API
+  version: "1.0"
+paths:
+  /api/v1/status:
+    get:
+      description: get status of app
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/emotebox.Status'
+      summary: Gives the default status of the app
+      tags:
+      - status
+swagger: "2.0"
