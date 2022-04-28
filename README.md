@@ -16,11 +16,18 @@ Emotebox is a web application for emote management in Discord.
 ## Installation
 coming soon
 
+## Contributing
+If you want to work on an issue/feature, make sure to open an issue before committing too far otherwise small bug fixes are always welcome.
+
 ## Development
 
-#### Server Development Environment (golang)
-For development you can either manually run `go run ./cmd/emotebox/main.go`,
-Or if you want live reload, you can use [Air](https://github.com/cosmtrek/air). 
+The project uses docker compose to easily setup a dev environment, just run the command for a live reload dev environment.
+```
+docker compose up -d
+```
+
+The server is exposed at `localhost:8080` while the client is at `localhost:4000`.
+Happy developing!
 
 ## License
 MIT
