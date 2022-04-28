@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  server:
+    volumes:
+      - ./:/api
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    ports: 
+      - "8080:8080"
+    command: air
+  web:
+    volumes:
+      - ./web/app:/app
+    build: ./web/app
+    ports: 
+      - "3000:3000"
+    command: yarn dev --host=0.0.0.0
+
