@@ -18,7 +18,7 @@ coming soon
 
 ## Development
 
-##### Server Development Environment (golang)
+#### Server Development Environment (golang)
 For development you can either manually run `go run ./cmd/emotebox/main.go`,
 Or if you want live reload, you can use [Air](https://github.com/cosmtrek/air). 
 
