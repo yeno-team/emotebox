@@ -1,14 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "Emotebox's Server",
-        "title": "Emotebox API",
-        "contact": {},
-        "license": {
-            "name": "MIT",
-            "url": "https://github.com/yeno-team/emotebox/blob/main/LICENSE"
-        },
-        "version": "1.0"
+        "contact": {}
     },
     "paths": {
         "/api/v1/status": {

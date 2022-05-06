@@ -11,10 +11,6 @@ const docTemplate = `{
         "description": "{{escape .Description}}",
         "title": "{{.Title}}",
         "contact": {},
-        "license": {
-            "name": "MIT",
-            "url": "https://github.com/yeno-team/emotebox/blob/main/LICENSE"
-        },
         "version": "{{.Version}}"
     },
     "host": "{{.Host}}",
@@ -60,12 +56,12 @@ const docTemplate = `{
 
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
-	Version:          "1.0",
+	Version:          "",
 	Host:             "",
 	BasePath:         "",
 	Schemes:          []string{},
-	Title:            "Emotebox API",
-	Description:      "Emotebox's Server",
+	Title:            "",
+	Description:      "",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 }

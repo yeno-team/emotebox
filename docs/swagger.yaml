@@ -13,12 +13,6 @@ definitions:
     type: object
 info:
   contact: {}
-  description: Emotebox's Server
-  license:
-    name: MIT
-    url: https://github.com/yeno-team/emotebox/blob/main/LICENSE
-  title: Emotebox API
-  version: "1.0"
 paths:
   /api/v1/status:
     get:
