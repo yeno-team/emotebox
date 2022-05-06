@@ -2,8 +2,10 @@ package main
 
 import (
 	"os"
+	"strings"
 
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/yeno-team/emotebox/controller"
@@ -21,13 +23,31 @@ import (
 // @license.url https://github.com/yeno-team/emotebox/blob/main/LICENSE
 
 func main() {
-	r := gin.Default()
+	var envLoadError error
+
+	env := strings.ToLower(os.Getenv("APP_ENV"))
+	switch env {
+	case "prod":
+	case "production":
+	case "release":
+		envLoadError = godotenv.Load(".production.env")
+	default:
+		envLoadError = godotenv.Load(".env")
+	}
+
+	if envLoadError != nil {
+		panic(envLoadError)
+	}
+
 	logger := &example.Logger{}
-	r.Use(middleware.ErrorHandler(logger))
-	discordSession, err := discordgo.New("Bot " + os.Getenv("DISCORD_TOKEN"))
+
+	discordSession, err := discordgo.New(os.Getenv("DISCORD_TOKEN"))
 	if err != nil {
 		panic(err)
 	}
+
+	r := gin.Default()
+	r.Use(middleware.ErrorHandler(logger))
 
 	v1 := r.Group("/api/v1")
 	{

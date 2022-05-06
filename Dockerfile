@@ -2,12 +2,14 @@
 
 FROM golang:1.16-buster as build
 
+ARG APP_ENV
 WORKDIR /api
 
 COPY go.mod ./
 COPY go.sum ./
 RUN go mod download
 
+COPY *.env ./
 COPY *.go ./
 COPY /controller ./controller
 COPY /mock ./mock
