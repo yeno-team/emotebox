@@ -23,20 +23,13 @@ import (
 // @license.url https://github.com/yeno-team/emotebox/blob/main/LICENSE
 
 func main() {
-	var envLoadError error
-
-	env := strings.ToLower(os.Getenv("APP_ENV"))
-	switch env {
-	case "prod":
-	case "production":
-	case "release":
-		envLoadError = godotenv.Load(".production.env")
-	default:
-		envLoadError = godotenv.Load(".env")
+	APP_ENV := strings.ToLower(os.Getenv("APP_ENV"))
+	if APP_ENV == "" {
+		APP_ENV = "development"
 	}
-
-	if envLoadError != nil {
-		panic(envLoadError)
+	err := godotenv.Load("." + APP_ENV + ".env")
+	if err != nil {
+		panic(err)
 	}
 
 	logger := &example.Logger{}
