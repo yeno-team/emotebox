@@ -10,7 +10,11 @@ type UserController struct {
 }
 
 // User Get Controller godoc
-// @Summary
+// @Summary Gets the current authenticated user
+// @Description Gets the current authenticated user
+// @Tags Authentication
+// @Success 200 {object} emotebox.User
+// @Router /api/v1/user [get]
 func (uc *UserController) GetCurrentUser(c *gin.Context) {
 	user, err := uc.UserService.GetCurrentUser()
 	if err != nil {

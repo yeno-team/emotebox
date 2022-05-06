@@ -11,6 +11,22 @@ definitions:
         minLength: 4
         type: string
     type: object
+  emotebox.User:
+    description: The user object
+    properties:
+      avatar_url:
+        description: User's Avatar Url
+        example: https://cdn.discordapp.com/avatars/473740736526024714/a_721f35ba7b5ecca6317b93f893f66908.gif?size=80
+        type: string
+      id:
+        description: User's Discord Id
+        example: "473740736526024714"
+        type: string
+      username:
+        description: User's Name
+        example: Khai
+        type: string
+    type: object
 info:
   contact: {}
   description: Emotebox's Server
@@ -30,5 +46,16 @@ paths:
             $ref: '#/definitions/emotebox.Status'
       summary: Gives the default status of the app
       tags:
-      - status
+      - Status
+  /api/v1/user:
+    get:
+      description: Gets the current authenticated user
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/emotebox.User'
+      summary: Gets the current authenticated user
+      tags:
+      - Authentication
 swagger: "2.0"

@@ -24,7 +24,7 @@ const docTemplate = `{
             "get": {
                 "description": "get status of app",
                 "tags": [
-                    "status"
+                    "Status"
                 ],
                 "summary": "Gives the default status of the app",
                 "responses": {
@@ -32,6 +32,23 @@ const docTemplate = `{
                         "description": "OK",
                         "schema": {
                             "$ref": "#/definitions/emotebox.Status"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/user": {
+            "get": {
+                "description": "Gets the current authenticated user",
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Gets the current authenticated user",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/emotebox.User"
                         }
                     }
                 }
@@ -52,6 +69,27 @@ const docTemplate = `{
                     "maxLength": 20,
                     "minLength": 4,
                     "example": "OK"
+                }
+            }
+        },
+        "emotebox.User": {
+            "description": "The user object",
+            "type": "object",
+            "properties": {
+                "avatar_url": {
+                    "description": "User's Avatar Url",
+                    "type": "string",
+                    "example": "https://cdn.discordapp.com/avatars/473740736526024714/a_721f35ba7b5ecca6317b93f893f66908.gif?size=80"
+                },
+                "id": {
+                    "description": "User's Discord Id",
+                    "type": "string",
+                    "example": "473740736526024714"
+                },
+                "username": {
+                    "description": "User's Name",
+                    "type": "string",
+                    "example": "Khai"
                 }
             }
         }

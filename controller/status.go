@@ -12,7 +12,7 @@ type StatusController struct {
 // Default godoc
 // @Summary Gives the default status of the app
 // @Description get status of app
-// @Tags status
+// @Tags Status
 // @Success 200 {object} emotebox.Status
 // @Router /api/v1/status [get]
 func (sc *StatusController) Default(c *gin.Context) {
