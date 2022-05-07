@@ -17,6 +17,7 @@
  * along with Emotebox.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// Package discordgo acts as a fascade to the external package discordgo
 package discordgo
 
 import (
@@ -26,6 +27,7 @@ import (
 	"github.com/yeno-team/emotebox"
 )
 
+// New constructs a new DiscordSession that is authenticated
 func New(token string) (*DiscordSession, error) {
 	discordgoSession, err := _discordgo.New("Bot " + token)
 	if err != nil {
@@ -35,6 +37,7 @@ func New(token string) (*DiscordSession, error) {
 	return &DiscordSession{Session: discordgoSession}, nil
 }
 
+// DiscordSession is a discordgo implementation of the emotebox.DiscordSession interface
 type DiscordSession struct {
 	Session *_discordgo.Session
 }

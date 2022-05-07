@@ -17,6 +17,7 @@
  * along with Emotebox.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// Package discord provides constants for Discord's OAuth 2.0
 package discord
 
 import "golang.org/x/oauth2"

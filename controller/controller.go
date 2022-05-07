@@ -17,5 +17,5 @@
  * along with Emotebox.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// Package example shows example implementations of core interfaces and packages
-package example
+// Package controller provides Handler Functions for a gin context
+package controller

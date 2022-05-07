@@ -24,6 +24,7 @@ import (
 	"github.com/yeno-team/emotebox"
 )
 
+// ErrorHandler handles errors for a chain of gin handlers
 func ErrorHandler(logger emotebox.Logger) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		c.Next()

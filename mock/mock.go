@@ -17,5 +17,5 @@
  * along with Emotebox.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// Package example shows example implementations of core interfaces and packages
-package example
+// Package mock provides mock implementations of core interfaces and packages
+package mock
