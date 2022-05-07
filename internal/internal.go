@@ -17,5 +17,5 @@
  * along with Emotebox.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// Package internal provides support functions for emotebox
+// Package internal includes code meant for only emotebox's codebase
 package internal

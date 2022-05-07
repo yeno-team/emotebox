@@ -17,20 +17,20 @@
  * along with Emotebox.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// Package discord provides constants for Discord's OAuth 2.0
+// Package discord provides constants for Discord's OAuth
 package discord
 
-import "golang.org/x/oauth2"
+import "github.com/yeno-team/emotebox/pkg/oauth2"
 
-// Endpoint is Discord's OAuth 2.0 endpoint
-var Endpoint = oauth2.Endpoint{
+// Discord is Discord's OAuth 2.0 endpoints
+var Discord = oauth2.Endpoint{
 	AuthURL:  "https://discord.com/api/oauth2/authorize",
 	TokenURL: "https://discord.com/api/oauth2/token",
 }
 
-// Scopes is Discord's available scopes for OAuth2
+// DiscordScopes is Discord's available scopes for OAuth2
 // For more information, https://discord.com/developers/docs/topics/oauth2#shared-resources-oauth2-scopes
-var Scopes []string = []string{
+var DiscordScopes []string = []string{
 	"activites.read",
 	"activities.write",
 	"applications.builds.read",

@@ -17,10 +17,29 @@
  * along with Emotebox.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package internal
+// Package random provides functions focused on randomness
+package random
 
-import "net/url"
+import (
+	"crypto/rand"
+)
 
-type OAuth2Client interface {
-	AuthUrl(redirectUrl url.URL) (*url.URL, error) // AuthUrl returns the endpoint's consent page URL passing on the redirect URL from it's arguments
+// RandBytes generates random bytes
+func RandBytes(len int) ([]byte, error) {
+	bytes := make([]byte, len)
+	_, err := rand.Read(bytes)
+	if err != nil {
+		return nil, err
+	}
+
+	return bytes, nil
+}
+
+// RandString generates a random string
+func RandString(len int) (string, error) {
+	b, err := RandBytes(len)
+	if err != nil {
+		return "", err
+	}
+	return string(b[:]), nil
 }
