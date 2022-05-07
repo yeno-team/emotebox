@@ -17,12 +17,5 @@
  * along with Emotebox.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package example
-
-import "github.com/yeno-team/emotebox"
-
-type StatusService struct{}
-
-func (s *StatusService) Status() (*emotebox.Status, error) {
-	return &emotebox.Status{Message: "OK", Code: 200}, nil
-}
+// Package internal provides support functions for emotebox
+package internal
